@@ -15,7 +15,7 @@ public typealias Constraint = (_ layoutView: UIView) -> NSLayoutConstraint
 //
 public extension UIView {
     /// Adds constraints using NSLayoutAnchors, based on description provided in params.
-    /// Please refer to helper equal funtions for info how to generate constraints easily.
+    /// Please refer to helper equal functions for info how to generate constraints easily.
     ///
     /// - Parameter constraintDescriptions: constrains array
     /// - Returns: created constraints
