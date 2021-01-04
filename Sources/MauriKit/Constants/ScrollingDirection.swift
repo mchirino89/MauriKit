@@ -11,7 +11,7 @@ public enum ScrollingDirection {
     case horizontal
     case vertical
 
-    var groupSize: NSCollectionLayoutSize {
+    public var groupSize: NSCollectionLayoutSize {
         switch self {
         case .vertical:
             return NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
@@ -22,11 +22,11 @@ public enum ScrollingDirection {
         }
     }
 
-    var orthogonalBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior {
+    public var orthogonalBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior {
         self == .vertical ? .none : .continuous
     }
 
-    func buildGroup(for item: NSCollectionLayoutItem) -> NSCollectionLayoutGroup {
+    public func buildGroup(for item: NSCollectionLayoutItem) -> NSCollectionLayoutGroup {
         switch self {
         case .vertical:
             return NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)

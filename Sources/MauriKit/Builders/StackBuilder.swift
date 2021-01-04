@@ -15,10 +15,10 @@ public struct StackSetup {
     let distribution: UIStackView.Distribution
 
     public init(arrangedSubviews: [UIView],
-         axis: NSLayoutConstraint.Axis = .vertical,
-         spacing: CGFloat = UIConstants.standardPadding,
-         alignment: UIStackView.Alignment = .fill,
-         distribution: UIStackView.Distribution = .fill) {
+                axis: NSLayoutConstraint.Axis = .vertical,
+                spacing: CGFloat = UIConstants.standardPadding,
+                alignment: UIStackView.Alignment = .fill,
+                distribution: UIStackView.Distribution = .fill) {
         self.arrangedSubviews = arrangedSubviews
         self.axis = axis
         self.spacing = spacing
