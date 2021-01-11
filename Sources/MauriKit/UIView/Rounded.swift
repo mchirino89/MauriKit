@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UIView {
-    /// Turn current component into a rounded one. Works properly on squared components (aspect ratio 1:1)
+    /// Turns the current component into a rounded one. Works properly on squared components (aspect ratio 1:1)
     func rounded() {
         layer.masksToBounds = false
         layer.cornerRadius = frame.height / 2
