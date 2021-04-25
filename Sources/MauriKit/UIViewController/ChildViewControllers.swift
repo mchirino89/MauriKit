@@ -10,6 +10,10 @@ import UIKit
 @nonobjc
 /// Inspiration [source](https://www.hackingwithswift.com/example-code/uikit/how-to-use-view-controller-containment)
 public extension UIViewController {
+    /// Adds a child view controller within the bounds of a provided view
+    /// - Parameters:
+    ///   - viewController: `UIViewController` to be added
+    ///   - container: container `UIView` for the Child ViewController to fill entirely
     func addExternal(viewController: UIViewController, on container: UIView) {
         addChild(viewController)
         container.addSubview(viewController.view)
@@ -18,7 +22,8 @@ public extension UIViewController {
         viewController.didMove(toParent: self)
     }
 
-    func removeFromParent() {
+    /// Removes the current `UIViewController` from its parent
+    func removeChildViewController() {
         willMove(toParent: nil)
         view.removeFromSuperview()
         removeFromParent()
