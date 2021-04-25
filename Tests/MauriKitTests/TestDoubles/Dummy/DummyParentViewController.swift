@@ -22,7 +22,7 @@ final class DummyParentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        view.backgroundColor = .white
         view.addSubview(containerView)
     }
 }
