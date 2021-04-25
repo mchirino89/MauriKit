@@ -16,11 +16,12 @@ public extension UITableView {
     }
 
     /// Registers a `UITableViewCell` with its companion xib file in the current `UITableView` with its _class name_ as a default identifier
+    /// File names for both `UICollectionViewCell` and xib **MUST** match with custom _class name_
     /// - Parameters:
     ///   - : type for the desired `UITableViewCell` to register
     ///   - bundle: `Bundle` where the xib file is contained. Defaults to the same bundle where `UITableViewCell` file is located in
-    func registerNib<T: UITableViewCell>(_: T.Type, from bundle: Bundle = Bundle(for: T.self)) {
-        let xibIdentifier = String(describing: T.self).components(separatedBy: ".").last ?? ""
+    func registerNib<T: UITableViewCell>(for cellType: T.Type, from bundle: Bundle = Bundle(for: T.self)) {
+        let xibIdentifier = String(describing: cellType.self).components(separatedBy: ".").last ?? ""
         let nib = UINib(nibName: xibIdentifier, bundle: bundle)
 
         register(nib, forCellReuseIdentifier: xibIdentifier)

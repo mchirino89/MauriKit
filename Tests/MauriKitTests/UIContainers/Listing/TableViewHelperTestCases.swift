@@ -25,7 +25,7 @@ final class TableViewHelperTestCases: XCTestCase {
     func testTableViewDequeueXibCell() {
         // Given
         let testTableView = UITableView(frame: dummyFrame, style: .plain)
-        testTableView.register(cellType: MockTableViewCell.self)
+        testTableView.registerNib(for: MockTableViewCell.self, from: Bundle.module)
 
         // When
         let dequeued: MockTableViewCell = testTableView.dequeue()

@@ -26,7 +26,7 @@ final class CollectionViewHelperTestCases: XCTestCase {
     func testCollectionViewDequeueXibCell() {
         // Given
         let testCollectionView = UICollectionView(frame: dummyFrame, collectionViewLayout: .init())
-        testCollectionView.registerNib(MockCollectionCell.self, from: Bundle.module)
+        testCollectionView.registerNib(for: MockCollectionCell.self, from: Bundle.module)
 
         // When
         let dequeued: MockCollectionCell = testCollectionView.dequeue(at: IndexPath(row: 0, section: 0))

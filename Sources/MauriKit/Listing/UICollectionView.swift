@@ -15,12 +15,13 @@ public extension UICollectionView {
         register(cellType.self, forCellWithReuseIdentifier: String(describing: cellType.self))
     }
 
-    /// Registers a `UICollectionViewCell` with its companion xib file in the current `UICollectionView` with its _class name_ as a default identifier
+    /// Registers a `UICollectionViewCell` with its companion xib file in the current `UICollectionView` with its _class name_ as a default identifier.
+    /// File names for both `UICollectionViewCell` and xib **MUST** match with custom _class name_
     /// - Parameters:
     ///   - : type for the desired `UICollectionViewCell` to register
     ///   - bundle: `Bundle` where the xib file is contained. Defaults to the same bundle where `UICollectionViewCell` file is located in
-    func registerNib<T: UICollectionViewCell>(_: T.Type, from bundle: Bundle = Bundle(for: T.self)) {
-        let xibIdentifier = String(describing: T.self).components(separatedBy: ".").last ?? ""
+    func registerNib<T: UICollectionViewCell>(for cellType: T.Type, from bundle: Bundle = Bundle(for: T.self)) {
+        let xibIdentifier = String(describing: cellType.self).components(separatedBy: ".").last ?? ""
         let nib = UINib(nibName: xibIdentifier, bundle: bundle)
 
         register(nib, forCellWithReuseIdentifier: xibIdentifier)
