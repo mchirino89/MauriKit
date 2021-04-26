@@ -19,9 +19,4 @@ public extension UIViewController {
     func disableLargeTitleOnCurrentViewController() {
         navigationItem.largeTitleDisplayMode = .never
     }
-
-    /// Removes previous `ViewController` title (or the word _Back_ in case it didn't have one) next to the back button on the navigation bar
-    func hideBackButtonText() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-    }
 }

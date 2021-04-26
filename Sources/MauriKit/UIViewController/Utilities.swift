@@ -13,4 +13,12 @@ public extension UIViewController {
     var isVisible: Bool {
         self.view.window != nil
     }
+
+    /// Removes previous `ViewController` title (or the word _Back_ in case it didn't have one) next to the back button on the navigation bar
+    internal func hideBackButtonText() {
+        let topController = UIApplication.topViewController(from: self)
+        let cleanBackButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
+        topController?.navigationItem.backBarButtonItem = cleanBackButton
+    }
 }

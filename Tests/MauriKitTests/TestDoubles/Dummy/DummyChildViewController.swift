@@ -10,6 +10,7 @@ import UIKit
 final class DummyChildViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Dummy child view controller"
         view.backgroundColor = .yellow
     }
 }

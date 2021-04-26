@@ -19,6 +19,19 @@ final class UINavigationControllerTestCases: XCTestCase {
 
         verifySnapshot(for: sut, testName: #function)
     }
+
+    func _testNavigationBackButtonWithNoText() {
+        // Given
+        let sut = buildSUT()
+        sut.setTranslucent()
+        let childController = DummyChildViewController()
+
+        // When
+        sut.hideBackButtonText()
+        sut.pushViewController(childController, animated: false)
+
+        verifySnapshot(for: sut, testName: #function)
+    }
 }
 
 private extension UINavigationControllerTestCases {
